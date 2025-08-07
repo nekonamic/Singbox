@@ -3,11 +3,11 @@ using Wpf.Ui.Abstractions.Controls;
 
 namespace Singbox.Views.Pages
 {
-    public partial class DashboardPage : INavigableView<DashboardViewModel>
+    public partial class OverviewPage : INavigableView<OverviewViewModel>
     {
-        public DashboardViewModel ViewModel { get; }
+        public OverviewViewModel ViewModel { get; }
 
-        public DashboardPage(DashboardViewModel viewModel)
+        public OverviewPage(OverviewViewModel viewModel)
         {
             ViewModel = viewModel;
             DataContext = this;

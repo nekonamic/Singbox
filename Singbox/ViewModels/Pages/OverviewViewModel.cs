@@ -1,6 +1,6 @@
 ﻿namespace Singbox.ViewModels.Pages
 {
-    public partial class DashboardViewModel : ObservableObject
+    public partial class OverviewViewModel : ObservableObject
     {
         [ObservableProperty]
         private int _counter = 0;

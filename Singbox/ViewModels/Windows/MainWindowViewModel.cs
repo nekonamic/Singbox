@@ -15,7 +15,7 @@ namespace Singbox.ViewModels.Windows
             {
                 Content = "Overview",
                 Icon = new SymbolIcon { Symbol = SymbolRegular.Table24 },
-                TargetPageType = typeof(Views.Pages.DashboardPage)
+                TargetPageType = typeof(Views.Pages.OverviewPage)
             },
             new NavigationViewItem()
             {
