@@ -17,7 +17,7 @@
 
     <StackPanel>
         <TextBlock Text="Name" HorizontalAlignment="Left" FontWeight="Bold" FontSize="16" Margin="0,0,0,8"  />
-        <TextBox Margin="0,0,0,16" />
+        <TextBox Margin="0,0,0,16" Text="{Binding FileName, Mode=TwoWay}" />
         <TextBlock Text="Type" HorizontalAlignment="Left" FontWeight="Bold" FontSize="16" Margin="0,0,0,8"  />
         <ComboBox
                 Margin="0,0,0,16"
@@ -46,6 +46,6 @@
             <TextBlock Text="Auto Update Interval (Minutes)" HorizontalAlignment="Left" FontWeight="Bold" FontSize="16" Margin="0,0,0,8"  />
             <TextBox Margin="0,0,0,16" />
         </StackPanel>
-        <Button Command="{Binding ShowDialogCommand}" Content="Create" />
+        <Button Command="{Binding CreateProfileCommand}" Content="Create" />
     </StackPanel>
 </Page>
