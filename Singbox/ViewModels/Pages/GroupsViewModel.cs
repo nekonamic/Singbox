@@ -4,7 +4,7 @@ using Wpf.Ui.Abstractions.Controls;
 
 namespace Singbox.ViewModels.Pages
 {
-    public partial class DataViewModel : ObservableObject, INavigationAware
+    public partial class GroupsViewModel : ObservableObject, INavigationAware
     {
         private bool _isInitialized = false;
 

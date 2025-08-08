@@ -48,10 +48,16 @@ namespace Singbox
 
                 services.AddSingleton<OverviewPage>();
                 services.AddSingleton<OverviewViewModel>();
-                services.AddSingleton<DataPage>();
-                services.AddSingleton<DataViewModel>();
+                services.AddSingleton<GroupsPage>();
+                services.AddSingleton<GroupsViewModel>();
+                services.AddSingleton<ProfilesPage>();
+                services.AddSingleton<ProfilesViewModel>();
+                services.AddSingleton<LogsPage>();
+                services.AddSingleton<LogsViewModel>();
                 services.AddSingleton<SettingsPage>();
                 services.AddSingleton<SettingsViewModel>();
+                services.AddSingleton<NewProfilePage>();
+                services.AddSingleton<NewProfileViewModel>();
             }).Build();
 
         /// <summary>

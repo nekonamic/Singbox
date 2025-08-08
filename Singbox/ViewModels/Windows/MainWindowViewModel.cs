@@ -21,7 +21,7 @@ namespace Singbox.ViewModels.Windows
             {
                 Content = "Group",
                 Icon = new SymbolIcon { Symbol = SymbolRegular.Group24 },
-                TargetPageType = typeof(Views.Pages.DataPage)
+                TargetPageType = typeof(Views.Pages.GroupsPage)
             }
         };
 
@@ -32,20 +32,26 @@ namespace Singbox.ViewModels.Windows
             {
                 Content = "Logs",
                 Icon = new SymbolIcon { Symbol = SymbolRegular.DocumentData24 },
-                // TargetPageType = typeof(Views.Pages.SettingsPage)
+                TargetPageType = typeof(Views.Pages.LogsPage)
             },
             new NavigationViewItem()
             {
                 Content = "Profiles",
                 Icon = new SymbolIcon { Symbol = SymbolRegular.DocumentBulletList24 },
-                // TargetPageType = typeof(Views.Pages.SettingsPage)
+                TargetPageType = typeof(Views.Pages.ProfilesPage)
             },
             new NavigationViewItem()
             {
                 Content = "Settings",
                 Icon = new SymbolIcon { Symbol = SymbolRegular.Settings24 },
                 TargetPageType = typeof(Views.Pages.SettingsPage)
-            }
+            },
+            new NavigationViewItem()
+            {
+                Content = "NewProfile",
+                TargetPageType = typeof(Views.Pages.NewProfilePage),
+                Visibility = Visibility.Collapsed
+            },
         };
 
         [ObservableProperty]

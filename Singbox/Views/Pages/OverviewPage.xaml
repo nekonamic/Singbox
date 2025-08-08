@@ -16,11 +16,18 @@
     Foreground="{DynamicResource TextFillColorPrimaryBrush}"
     mc:Ignorable="d">
 
-    <Grid VerticalAlignment="Top">
+    <Grid VerticalAlignment="Top" >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
         <UniformGrid Rows="2" Columns="2" Margin="0,0,0,12" HorizontalAlignment="Stretch">
 
             <!-- Status -->
-            <ui:Card>
+            <ui:Card Margin="0,0,8,8">
                 <StackPanel>
                     <TextBlock Text="Status" FontWeight="Bold" FontSize="16" Margin="0,0,0,8" />
                     <Grid>
@@ -29,45 +36,173 @@
                             <ColumnDefinition Width="Auto" />
                         </Grid.ColumnDefinitions>
 
-                        <!-- 左对齐 -->
                         <TextBlock Grid.Column="0"
-               Text="{Binding MemoryUsage, StringFormat=Memory: {0} MB}"
-               HorizontalAlignment="Left" />
+                           Text="Memory"
+                           HorizontalAlignment="Left" />
 
-                        <!-- 右对齐 -->
                         <TextBlock Grid.Column="1"
-               Text="{Binding Goroutines, StringFormat=Goroutines: {0}}"
-               HorizontalAlignment="Right" />
+                           Text="{Binding MemoryUsage, StringFormat={}{0} MB}"
+                           HorizontalAlignment="Right" />
+                    </Grid>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock Grid.Column="0"
+                           Text="Goroutines"
+                           HorizontalAlignment="Left" />
+
+                        <TextBlock Grid.Column="1"
+                           Text="{Binding Goroutines, StringFormat={}{0}}"
+                           HorizontalAlignment="Right" />
                     </Grid>
                 </StackPanel>
             </ui:Card>
 
             <!-- Connections -->
-            <ui:Card>
+            <ui:Card Margin="0,0,8,8">
                 <StackPanel>
                     <TextBlock Text="Connections" FontWeight="Bold" FontSize="16" Margin="0,0,0,8" />
-                    <TextBlock Text="{Binding Inbound, StringFormat=Inbound: {0}}" />
-                    <TextBlock Text="{Binding Outbound, StringFormat=Outbound: {0}}" />
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock Grid.Column="0"
+                           Text="Inbound"
+                           HorizontalAlignment="Left" />
+
+                        <TextBlock Grid.Column="1"
+                           Text="{Binding Inbound, StringFormat={}{0}}"
+                           HorizontalAlignment="Right" />
+                    </Grid>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock Grid.Column="0"
+                           Text="Outbound"
+                           HorizontalAlignment="Left" />
+
+                        <TextBlock Grid.Column="1"
+                           Text="{Binding Outbound, StringFormat={}{0}}"
+                           HorizontalAlignment="Right" />
+                    </Grid>
                 </StackPanel>
             </ui:Card>
 
             <!-- Traffic -->
-            <ui:Card>
+            <ui:Card Margin="0,0,8,8">
                 <StackPanel>
                     <TextBlock Text="Traffic" FontWeight="Bold" FontSize="16" Margin="0,0,0,8" />
-                    <TextBlock Text="{Binding UplinkSpeed, StringFormat=Uplink: {0}}" />
-                    <TextBlock Text="{Binding DownlinkSpeed, StringFormat=Downlink: {0}}" />
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock Grid.Column="0"
+                           Text="Uplink"
+                           HorizontalAlignment="Left" />
+
+                        <TextBlock Grid.Column="1"
+                           Text="{Binding UplinkSpeed, StringFormat={}{0}}"
+                           HorizontalAlignment="Right" />
+                    </Grid>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock Grid.Column="0"
+                           Text="Downlink"
+                           HorizontalAlignment="Left" />
+
+                        <TextBlock Grid.Column="1"
+                           Text="{Binding DownlinkSpeed, StringFormat={}{0}}"
+                           HorizontalAlignment="Right" />
+                    </Grid>
                 </StackPanel>
             </ui:Card>
 
             <!-- TrafficTotal -->
-            <ui:Card>
+            <ui:Card Margin="0,0,8,8">
                 <StackPanel>
                     <TextBlock Text="TrafficTotal" FontWeight="Bold" FontSize="16" Margin="0,0,0,8" />
-                    <TextBlock Text="{Binding TotalUplink, StringFormat=Uplink: {0}}" />
-                    <TextBlock Text="{Binding TotalDownlink, StringFormat=Downlink: {0}}" />
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock Grid.Column="0"
+                           Text="Uplink"
+                           HorizontalAlignment="Left" />
+
+                        <TextBlock Grid.Column="1"
+                           Text="{Binding TotalUplink, StringFormat={}{0}}"
+                           HorizontalAlignment="Right" />
+                    </Grid>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock Grid.Column="0"
+                           Text="Downlink"
+                           HorizontalAlignment="Left" />
+
+                        <TextBlock Grid.Column="1"
+                           Text="{Binding TotalDownlink, StringFormat={}{0}}"
+                           HorizontalAlignment="Right" />
+                    </Grid>
                 </StackPanel>
             </ui:Card>
         </UniformGrid>
+        
+        <ui:Card Grid.Row="1" Margin="0,0,0,32" >
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Grid.Column="0"
+                   Text="HTTP Proxy"
+                   HorizontalAlignment="Left" />
+
+                <ui:ToggleSwitch Grid.Column="1" OnContent="{Binding IsHttpProxyEnabled}" HorizontalAlignment="Right" />
+            </Grid>
+        </ui:Card>
+
+        <TextBlock Grid.Row="2" Text="Profile" FontWeight="Bold" FontSize="16" Margin="0,0,0,8" />
+        
+        <ui:Card Grid.Row="3">
+            <StackPanel Orientation="Vertical">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Grid.Column="0"
+                       Text="profile local"
+                       HorizontalAlignment="Left" />
+
+                    <RadioButton Grid.Column="1"
+                         IsChecked="{Binding IsLocalProfileSelected}"
+                         Command="{Binding SelectLocalProfileCommand}" 
+                         FlowDirection="RightToLeft">
+                    </RadioButton>
+                </Grid>
+            </StackPanel>
+        </ui:Card>
     </Grid>
 </Page>
